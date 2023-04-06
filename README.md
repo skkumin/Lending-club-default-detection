@@ -7,8 +7,9 @@ SNU-Fintech 통계 데이터 사이언스 project
 
 [프로젝트 리뷰]  
 https://velog.io/@skkumin/Lending_club_default_detection_rivew  
+  
 [데이터 출처]  
-https://www.kaggle.com/datasets/imsparsh/lending-club-loan-dataset-2007-2011 (해당 분석에 사용한 데이터와 살짝 다를 수 있다!)  
+https://www.kaggle.com/datasets/imsparsh/lending-club-loan-dataset-2007-2011(해당 분석에 사용한 데이터와 살짝 다를 수 있다!)  
 
 
 #폴더 설명
