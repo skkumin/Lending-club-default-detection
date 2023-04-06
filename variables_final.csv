@@ -1,0 +1,57 @@
+,columns,explain,use_or_not,
+0,index,"ID 번호, 고유번호",not,
+1,loan_amnt,"신청자가 신청한 대출 금액을 의미합니다. 만약 대출 심사 과정에서 대출 금액이 줄어들면, 이 값이 해당 금액으로 반영됩니다.",use,
+2,funded_amnt,대출에 투자한 총금액,cal,
+3,funded_amnt_inv,투자자들이 대출에 투자한 총금액,cal,
+4,int_rate,Interest rate on the loan,cal,(이전 연구에서 사용x 확인) / 사용한 연구도 존재
+5,installment,대출했을 경우 매월 상환해야 하는 금액,cal,사용한 연구 존재
+6,annual_inc,등록 시 대출자가 제공한 자테 보고 연간소득,use,
+7,dti,모기지 및 요청된 LC대출을 제외한 총 부체에 대한 차용인의 월별 부채 총액을 차용인의 자체 보고 월 소득으로 나누어 계산한 비율,use,
+8,delinq_2yrs,지난 2년간 대출자의 신용 파일에서 연체된 30일 이상의 건수,use,
+9,fico_range_low,"대출 발행 시점에 차용인의 Fico(신용점수)가 속하는 하한 범위 (min: 660, fair / max: 845, excellent)",use,(일단)
+10,fico_range_high,"대출 발행 시점에 차용인의 Fico(신용점수)가 속하는 상한 범위 (min: 664, fair / max: 850, excellent)",use,(일단)
+11,inq_last_6mths,최근 6개월간 조회(inquiry)건수(자동차 및 주택담보대출 조회 제외). inquiry는 돈을 빌리거나 할 때 이루어진다. hard inquiry는 신용등급에 영향을 주며 2년간 기록이 사라지지 않는다. soft inquiry는 스스로 credit report를 조회하는 것을 이른다.,use,
+12,open_acc,The number of open credit lines in the borrower's credit file. (한도가 정해진 사전 협의 대출 계약의 수),use,(고민)
+13,pub_rec,"derogatory public record(채무불이행, 연체, 파산 기록 등)의 수",use,
+14,revol_bal,"Total credit revolving balance(회전신용으로 사용하고 갚아야 하는 돈, credit limit에 대한 비율로 주로 계산됨.)",not,
+15,revol_util,"Revolving line utilization rate, or the amount of credit the borrower is using relative to all available revolving credit. (총 신용 한도 중 현재까지 사용한 금액의 비율, 20~25%면 적절하다고 함. 높을수록 빌려주는 사람의 부담 증가)",use,
+16,total_acc,"The total number of credit lines currently in the borrower's credit file (신용 계좌, 카드 등의 수. fico상 excellent인 그룹의 평균은 3이라고 함. 많을 수록 빌려주는 사람의 부담 증가)",no,(사용하려면 open이랑 역어서 퍼선트 사용하면 가능?)
+17,out_prncp,"Remaining outstanding principal for total amount funded (잔여 대출 상환금, 갚아야 하는 돈 중 남은 금액, 이자 포함)",no,
+18,out_prncp_inv,"Remaining outstanding principal for portion of total amount funded by investors (투자자한테서 자금을 조달한 금액 중 남은 금액, 이자 포함)",no,
+19,total_pymnt,Payments received to date for total amount funded (총 자본조달 중 회수한 금액),no,
+20,total_pymnt_inv,투자자가 자금을 조달한 총액의 일부에 대해 현재까지 받은 지급액,cal,
+21,total_rec_prncp, Principal received to date: ? -> 대출 원금의 전부 또는 일부를 지불해야 하는 대출 계약에 명시된 각 날짜를 의미한다.,no,
+22,total_rec_int,현재까지 받은 이자,no,
+23,total_rec_late_fee,현재까지 받은 연체료,no,
+24,recoveries,청구 후 총 회수,no,
+25,collection_recovery_fee,후불 수금 수수료,no,
+26,last_pymnt_amnt,마지막으로 받은 총 결제 금액,no,
+27,last_fico_range_high,"(가장 최근 credit inquiry 시) 신용 조회 당시 최고 FICO score(범위) FICO - Fair Isaac Corporation 대출기관에서 채점한 고객의 신용점수 표준  실제 은행에서 위험성을 계산하는데 많이 쓰이는 변수이다. 신용기간, 대출금액등 여러요소가 FICO score 에 포함된다.",use,https://hcmortgage.com/2021/02/08/mortgage-column_01/
+28,last_fico_range_low,신용 조회 당시 최저 FICO score(범위),use,
+29,collections_12_mths_ex_med,2차 지원자 신청시 의료 징수를 제외한 지난 12개월 동안 징수한 횟수,no,
+30,acc_now_delinq,대출 신청자가 현재 체납중인 대출계과 개수,use,?
+31,tot_coll_amt,총 청구금액. ,no,
+32,tot_cur_bal,모든 계좌의 현재 총 잔액.,use,
+33,chargeoff_within_12_mths,"2차 대출시 , 지난 12개월동아 차주가 대출 상환을 하지 못하고 대출 채권을 포기한 횟수.",use,
+34,delinq_amnt,대출 신청자가 현재 체납중인 금액,use,
+35,pub_rec_bankruptcies,공식적인 파산 수?,use,
+36,tax_liens,세금 체납 횟수,use,
+37,home_ownership,"등록 시 차용인이 제공한 주택 소유 상태. (1:any, 2: mortgage, 3:none, 4: other, 5: own, 6: rent)",use,
+43,verification_status,"소득이 LC에 의해 확인되었는지, 확인되지 않았는지 또는 소득원이 확인되었는지를 나타낸다.(1, 2, 3)",use,
+46,purpose,"대출자가 제공한 대출 요청의 목적 범주(14개) 한국 논문에서는 독립변수로 사용함 (1: car, 2: credit card, 3: debt consolidation, 4:educational,, 5: home improvement, 6:house, 7: major purchase, 8: medial , 9:moving, 10: other, 11: renewable energy, 12: small business, 13: vacation, 14: wedding)",use,
+60,addr_state,요청하는 사람의 state,not,
+112,initial_list_status,"F는 부분 대출을 뜻한다.대출의 상태를 뜻한다, W 는 전체 대출(1, 2가 뭔지 모름)",not,
+113,elapsed_t,대출이 발행된후 경과된 시간(month) - 시간경과에따른 대출 성과 추적 하는데 사용가능,not,
+114,debt_settlement_flag1,채무 불이행을 한 대출자가 채무 정산 회사와 협력하고 있는지 나타내는 플래그 변수이다. 0 false 1 -True,not,
+115,term1,대출의 상환 기간을 뜻한다.  단위는 month 이며 36 혹은 60 값을 가진다.,no,신용 연관 무리?
+116,depvar,"종속변수(신용정상,비정상)",종속변수,
+117,issue,대출금이 입금된 날,not,
+118,emp_length,"0부터 10까지의 고용기간 0은 1년미만, 10은 10년이상으로 측정 ()",use,
+119,mths_since_last_delinq,대출자가 연체이후 지난 개월수 단위는 month,not,month시리즈는 나중에 넣어보기
+120,mths_since_last_major_derog,대출자가 받은 최근 90일 등급중 제일 낮은 등급 이후의 개월수 (90일이지나면 거래정지여서 90일 기준으로 나눈거같음),not,
+121,mths_since_last_record,최근 공개 기록 이후 개월수,not,
+122,mths_since_rcnt_il,할부계정 개설 이후 개월수,not,
+123,mths_since_recent_bc,은행카드 계정 개설 이후 개월수,not,
+124,mths_since_recent_bc_dlq,은행카드 연체 이후 개월수,not,
+125,mths_since_recent_inq,최근 정보 조회 이후 개월수,not,
+126,mths_since_recent_revol_delinq,가장최근 revolving 연체 이후 개월수,not,
